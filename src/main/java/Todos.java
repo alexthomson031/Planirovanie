@@ -39,7 +39,10 @@ public class Todos {
         Task[] result = new Task[0]; // массив для ответа
         for (Task task : tasks) { // перебираем все задачи
             if (task.matches(query)) { // если задача подходит под запрос
-                result = addToArray(result, task); // добавляем её в массив ответа
+                Task[] tmp = new Task[result.length + 1];
+                System.arraycopy(result, 0, tmp, 0, result.length);
+                tmp[tmp.length - 1] = task;
+                result = tmp;
             }
         }
         return result;
