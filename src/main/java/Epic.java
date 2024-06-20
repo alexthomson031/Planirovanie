@@ -16,7 +16,7 @@ public class Epic extends Task {
     public boolean matches(String query) {
         Epic[] result = new Epic[0];
         for (String subtask : subtasks) {
-            if (Objects.equals(subtusk, query))
+            if (Objects.equals(subtask, query))
                 return true;
         }
         return false;
